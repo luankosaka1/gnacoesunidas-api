@@ -1,8 +1,8 @@
 package lkosaka.gnacoesunidas.dto.student;
 
-import lkosaka.gnacoesunidas.entity.student.Address;
-import lkosaka.gnacoesunidas.entity.student.Contact;
-import lkosaka.gnacoesunidas.entity.student.Student;
+import lkosaka.gnacoesunidas.domain.student.Address;
+import lkosaka.gnacoesunidas.domain.student.Contact;
+import lkosaka.gnacoesunidas.domain.student.Student;
 
 import java.time.LocalDate;
 

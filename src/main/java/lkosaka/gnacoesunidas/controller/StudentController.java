@@ -5,9 +5,9 @@ import jakarta.validation.Valid;
 import lkosaka.gnacoesunidas.dto.student.CreateStudentRequestDto;
 import lkosaka.gnacoesunidas.dto.student.StudentResponseDto;
 import lkosaka.gnacoesunidas.dto.student.UpdateStudentRequestDto;
-import lkosaka.gnacoesunidas.entity.student.Address;
-import lkosaka.gnacoesunidas.entity.student.Contact;
-import lkosaka.gnacoesunidas.entity.student.Student;
+import lkosaka.gnacoesunidas.domain.student.Address;
+import lkosaka.gnacoesunidas.domain.student.Contact;
+import lkosaka.gnacoesunidas.domain.student.Student;
 import lkosaka.gnacoesunidas.repository.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -16,8 +16,6 @@ import org.springframework.data.web.PageableDefault;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponentsBuilder;
-
-import java.util.List;
 
 @RestController
 @RequestMapping("student")

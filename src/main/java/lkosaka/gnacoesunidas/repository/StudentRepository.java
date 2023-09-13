@@ -1,6 +1,6 @@
 package lkosaka.gnacoesunidas.repository;
 
-import lkosaka.gnacoesunidas.entity.student.Student;
+import lkosaka.gnacoesunidas.domain.student.Student;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;

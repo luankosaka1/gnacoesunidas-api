@@ -1,4 +1,4 @@
-package lkosaka.gnacoesunidas.entity.student;
+package lkosaka.gnacoesunidas.domain.student;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;

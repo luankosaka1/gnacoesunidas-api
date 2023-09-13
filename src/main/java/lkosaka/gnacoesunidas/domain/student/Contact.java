@@ -1,4 +1,4 @@
-package lkosaka.gnacoesunidas.entity.student;
+package lkosaka.gnacoesunidas.domain.student;
 
 import jakarta.persistence.Embeddable;
 import lombok.AllArgsConstructor;
