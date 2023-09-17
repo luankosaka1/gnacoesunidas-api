@@ -29,6 +29,12 @@ public class User implements UserDetails {
     @Column
     private Boolean status;
 
+    public User (String username, String password) {
+        this.username = username;
+        this.password = password;
+        this.status = true;
+    }
+
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return List.of(new SimpleGrantedAuthority("ROLE_ADMIN"));
