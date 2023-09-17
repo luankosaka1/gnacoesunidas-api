@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("login")
+@RequestMapping("auth")
 public class AuthenticationController {
     @Autowired
     private AuthenticationManager manager;
@@ -29,7 +29,7 @@ public class AuthenticationController {
     @Autowired
     private UserRepository repository;
 
-    @PostMapping
+    @PostMapping("login")
     public ResponseEntity login(@RequestBody @Valid AuthenticationRequestDto dto) {
         var token = new UsernamePasswordAuthenticationToken(dto.username(), dto.password());
         var authentication = manager.authenticate(token);
@@ -38,7 +38,7 @@ public class AuthenticationController {
         return ResponseEntity.ok(new AuthenticationResponseDto(jwt));
     }
 
-    @PostMapping
+    @PostMapping("register")
     public ResponseEntity register(@RequestBody @Valid RegisterRequestDto dto) {
         if (this.repository.findByUsername(dto.username()) != null) {
             return ResponseEntity.badRequest().build();

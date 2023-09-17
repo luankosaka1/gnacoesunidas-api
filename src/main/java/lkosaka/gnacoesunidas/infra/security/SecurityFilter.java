@@ -28,7 +28,7 @@ public class SecurityFilter extends OncePerRequestFilter {
             HttpServletResponse response,
             FilterChain filterChain
     ) throws ServletException, IOException {
-        var tokenJWT = tokenService.validateToken(this.getToken(request));
+        var tokenJWT = this.getToken(request);
 
         if (tokenJWT != null) {
             var subject = tokenService.getSubject(tokenJWT);
