@@ -1,5 +1,6 @@
 package lkosaka.gnacoesunidas.controller;
 
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import lkosaka.gnacoesunidas.dto.student.CreateStudentRequestDto;
@@ -19,6 +20,7 @@ import org.springframework.web.util.UriComponentsBuilder;
 
 @RestController
 @RequestMapping("student")
+@SecurityRequirement(name = "bearer-key")
 public class StudentController {
     @Autowired
     private StudentRepository repository;
