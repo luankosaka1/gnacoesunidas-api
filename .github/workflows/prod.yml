@@ -23,3 +23,14 @@ jobs:
               run: docker build -t lkosaka/gnacoesunidas-api .
             - name: Push image docker
               run: docker push lkosaka/gnacoesunidas-api
+
+    deploy:
+      needs: build
+      runs-on: self-hosted
+      steps:
+        - name: Pull image from docker hub with Github Runners
+          run: docker pull lkosaka/gnacoesunidas-api:latest
+        - name: Remove docker container
+          run: docker rm -f gnacoes-api
+        - name: Run docker container
+          run: docker run -d -p 80:8080 -e DATABASE_USERNAME=${{secrets.DATABASE_USERNAME}} -e DATABASE_PASSWORD='${{secrets.DATABASE_PASSWORD}}' -e DATABASE_URL=${{secrets.DATABASE_URL}} --name gnacoes-api lkosaka/gnacoesunidas-api
