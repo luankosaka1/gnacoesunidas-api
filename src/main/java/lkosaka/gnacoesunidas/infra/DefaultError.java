@@ -17,7 +17,7 @@ public class DefaultError {
     @ExceptionHandler(MethodArgumentNotValidException.class)
     public ResponseEntity error400(MethodArgumentNotValidException e) {
         var errors = e.getFieldErrors();
-        return ResponseEntity.badRequest().body(errors.stream().map(MessageValidation::new));
+        return ResponseEntity.badRequest().body(errors.stream().map(MessageValidation::new).toList());
     }
 
     private record MessageValidation(String field, String message) {
